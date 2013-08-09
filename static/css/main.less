@@ -82,6 +82,7 @@ a{
 
 #wrapper-header{
 	background:#232323;
+	border-bottom:5px solid #eee;
 }
 
 	#header{
@@ -109,10 +110,23 @@ a{
 
 #wrapper-navigation{
 	background:#dedede;
-	border-top:5px solid #eee;
-	border-bottom:5px solid #f3f3f3;
 	height:70px;
+	
+	// Absolute positioning prevents reflow when navigation goes
+	// sticky (static).
+	left:0px;
+	position:absolute;
+	top:551px;
+	z-index:1000;
 }
+
+	#wrapper-navigation.sticky{
+		left:0;
+		position:fixed;
+		top:0;
+		width:100%;
+		z-index:1000;
+	}
 
 	#navigation ul{
 		display:inline-block;
@@ -136,17 +150,22 @@ a{
 				font-style:italic;
 			}
 
+		#navigation ul li.current a{
+			color:#f74e07;
+		}
+
 #wrapper-main{
 	background:#f3f3f3;
+	margin-top:80px; // Height of navigation
 }
 
 	#main{
 		background:#fff;
-		padding:60px 0px 60px 0px;
+		padding:10px 0px 60px 0px;
 	}
 
-		#content{
-
+		.content{
+			padding:50px 0px 0px 0px;
 		}
 
 // Page content
@@ -155,37 +174,36 @@ a{
 	color:@text-highlight;
 }
 
-#content h1{
+.content h1{
 	font:normal 36px/36px @font-serif-roman;
 	font-style:italic;
 	margin:0px 0px 50px 0px;
 	text-align:center;
 }
 
-#content h2{
+.content h2{
 	font:normal 20px/26px @font-serif-roman;
 	margin:1em 0px 1em 0px;
 }
 
-#content h3{
+.content h3{
 	font:normal 17px/26px @font-serif-roman;
 	margin:1em 0px 1em 0px;
 }
 
-#content p{
+.content p{
 	font:normal 16px/22px @font-sans-alt-roman;
 	margin:1em 0px;
 }
 
-#content ul{
+.content ul{
 	font:normal 18px/24px @font-sans-alt-roman;
 	list-style:circle;
 	margin:1em 0px;
 }
 
 .banner-image{
-	margin:50px 0px !important;
-	padding:0px 0px !important;
+	padding:50px 0px 0px 0px !important;
 }
 
 	.banner-image img{
@@ -196,7 +214,7 @@ a{
 
 @media only screen and (max-width: 767px) {
 
-	#wrapper-header{
+	#header{
 		height:320px;
 	}
 
@@ -208,6 +226,10 @@ a{
 			font-size:20px;
 		}
 
+	#wrapper-navigation{
+		top:325px;
+	}
+
 	#wrapper-main{
 		background:#fff;
 	}
@@ -217,7 +239,7 @@ a{
 			padding-bottom:30px;
 		}
 
-		#content h1{
+		.content h1{
 			margin-bottom:30px;
 		}
 
