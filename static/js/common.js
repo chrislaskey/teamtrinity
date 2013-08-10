@@ -14,8 +14,8 @@ $(document).ready(function(){
 	stickyNav.contentSections = $('.content');
 
 	$(window).resize(function(e) {
-		stickyNav.wrapperPos = stickyNav.wrapper.offset().top;
 		stickyNav.windowHeight = $(window).height();
+		stickyNav.wrapperPos = stickyNav.wrapper.offset().top;
 	});
 
 	$(window).on('scroll', function(e) {
