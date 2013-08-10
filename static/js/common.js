@@ -2,17 +2,20 @@ $(document).ready(function(){
 
 	// Sticky navigation modified from CoworkChicago
 	// See: http://coworkchicago.com
-	
+
 	var stickyNav = {}
 
-	stickyNav.nav = $('#navigation ul'),
-	stickyNav.wrapper = $('#wrapper-navigation'),
+	stickyNav.nav = $('#navigation ul');
+	stickyNav.wrapper = $('#wrapper-navigation');
 	stickyNav.wrapperPos = stickyNav.wrapper.offset().top;
+	stickyNav.wrapperHeight = stickyNav.wrapper.outerHeight();
+	stickyNav.windowHeight = $(window).height();
 	stickyNav.activeClass = 'current';
 	stickyNav.contentSections = $('.content');
 
 	$(window).resize(function(e) {
 		stickyNav.wrapperPos = stickyNav.wrapper.offset().top;
+		stickyNav.windowHeight = $(window).height();
 	});
 
 	$(window).on('scroll', function(e) {
@@ -30,7 +33,8 @@ $(document).ready(function(){
 			}
 
 			// Determine the current section
-			var currentOffset = scrollTop + stickyNav.wrapper.outerHeight(),
+			var middleOfWindow = Math.round((stickyNav.windowHeight - stickyNav.wrapperHeight) / 2),
+				currentOffset = scrollTop + middleOfWindow,
 				selectedSectionIndex;
 
 			stickyNav.contentSections.each(function(e){
@@ -53,5 +57,18 @@ $(document).ready(function(){
 			stickyNav.nav.find('li').eq(elementIndex).addClass(stickyNav.activeClass);
 		}
 	}
+
+	stickyNav.bindNavigation = (function(){
+		stickyNav.nav.find('a').each(function(index, element){
+			$(element).on('click', function(evt){
+				var target = stickyNav.contentSections.eq(index),
+					offset = stickyNav.wrapperHeight;
+
+				evt.preventDefault();
+				$.scrollTo(target, 300, {offset:-offset});
+				$(window).trigger('scroll');
+			});
+		});
+	})();
 
 });
