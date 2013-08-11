@@ -1,5 +1,6 @@
 
 # Ignore WordPress Files
+*.htaccess
 celest
 index.php
 license.txt

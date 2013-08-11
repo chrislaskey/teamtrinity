@@ -11,7 +11,7 @@ $(document).ready(function(){
 	stickyNav.wrapperHeight = stickyNav.wrapper.outerHeight();
 	stickyNav.windowHeight = $(window).height();
 	stickyNav.activeClass = 'current';
-	stickyNav.contentSections = $('.content');
+	stickyNav.contentSections = $('section');
 
 	$(window).resize(function(e) {
 		stickyNav.windowHeight = $(window).height();

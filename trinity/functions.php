@@ -6,72 +6,81 @@
  */
 
 //Definitions
+
 	if( ! defined('WP_TEMPLATEPATH') ){ define('WP_TEMPLATEPATH', '/wp-content/themes/trinity'); }
 
 //Wordpress Overrides and Content Registrations
-	remove_filter('the_content', 'wptexturize');
+
+	add_filter('the_content', 'add_banner_images_to_content');
 
 	register_nav_menus(array(
 		'main' => 'Main Menu',
 	));
 
-//The following functions three functions (cat_list, tag_list, and term_list) are from the Wordpress 3.0 default theme twentyten.
-	if( !function_exists('cat_list') ){
+//Filter functions
 
-		function cat_list() {
-			return term_list('category', ', ', 'Categories: %s', 'Also posted in %s');
-		}
-
+	function add_banner_images_to_content($content){
+		$template = '</div>
+					<div class="sixteen column alpha omega banner-image">
+						<img src="${1}" alt="banner-image" width="100%"/>
+					</div>
+					<div class="twelve columns alpha omega offset-by-two content">';
+		$content = preg_replace('/{{ banner-image:(.*) }}/', $template, $content);
+		return $content;
 	}
 
-	if( !function_exists('tag_list') ){
-
-		function tag_list() {
-			return term_list( 'post_tag', ', ', 'Tags: %s', 'Also tagged %s');
-		}
-
+//Helper functions
+	function get_wp_menu_id($slug){
+		$locations = get_nav_menu_locations();
+		return isset($locations[$slug]) ? $locations[$slug] : FALSE;
 	}
 
-	if( !function_exists('term_list') ){
+	function get_section_template_path($subtype){
+		$subtype = strtolower($subtype);
 
+		$name = '/section-' . $subtype . '.php';
+		if( $template = locate_template($name) ){
+			return $template;
+		}
+
+		$name = '/section.php';
+		if( $template = locate_template($name) ){
+			return $template;
+		}
+
+		trigger_error(
+			'Could not find required Team Trinity WP template file section.php',
+			E_USER_WARNING
+		);
+
+		return '';
+	}
+
+	function get_root_id_from_page_title($title){
 		/**
-		 * Updated v.1.0.1
-		 * CL
-		 */
-
-		function term_list($taxonomy, $glue = ', ', $text = '', $also_text = '') {
-
-			global $post, $wp_query;
-			$current_term = $wp_query->get_queried_object();
-			$terms = wp_get_object_terms($post->ID, $taxonomy);
-
-			// If we're viewing a Taxonomy page..
-			if ( isset( $current_term->taxonomy ) && $taxonomy == $current_term->taxonomy ) {
-
-				// Remove the term from display.
-				foreach ( $terms as $key => $term ) {
-					if ( $term->term_id == $current_term->term_id ) {
-						unset( $terms[$key] );
-						break;
-					}
-				}
-
-				// Change to Also text as we've now removed something from the terms list.
-				$text = $also_text;
-
-			}
-
-			$tlist = array();
-			$rel = 'category' == $taxonomy ? 'rel="category"' : 'rel="tag"';
-			foreach ( (array) $terms as $term ) {
-				$tlist[] = '<a href="' . get_term_link( $term, $taxonomy ) . '" title="' . esc_attr( sprintf('View all posts in %s', $term->name ) ) . '" ' . $rel . '>' . $term->name . '</a>';
-			}
-
-			if ( ! empty( $tlist ) )
-				return sprintf( $text, join( $glue, $tlist ) );
-			return '';
+ 		* Note: can not use $section->ID from the returned navigation object.
+ 		* The menu caches the current revision ID, not the root ID. The revision
+ 		* ID will not return children pages. So a second lookup is required to get
+ 		* the root ID.
+ 		*/
+		$page = get_page_by_title($title);
+		if( $page && isset($page->ID) ){
+			return $page->ID;
 		}
+		return 0;
+	}
 
+	function get_section_post($id){
+		return get_post($id);
+	}
+
+	function get_section_children($id){
+		$args = array( 
+    		'post_parent' => $id,
+			'post_type' => 'any',
+			'post_status' => 'publish',
+		);
+		return get_posts($args);
 	}
 
 /* End of file functions.php */
