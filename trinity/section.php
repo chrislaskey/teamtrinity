@@ -10,7 +10,7 @@ setup_postdata($post);
 ?>
 
 <section>
-	<div class="twelve columns alpha omega offset-by-two content">
+	<div class="twelve columns offset-by-two content">
 		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?>
 	</div>

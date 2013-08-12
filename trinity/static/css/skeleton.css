@@ -52,6 +52,31 @@
     .container .one-third.column                { width: 300px; }
     .container .two-thirds.column               { width: 620px; }
 
+    /* Base Grid No Margins */
+    .container .no-margins.column,
+    .container .no-margins.columns              { margin-left: 0px; margin-right: 0px; }
+
+    .container .no-margins.one.column,
+    .container .no-margins.one.columns                     { width: 60px;  }
+    .container .no-margins.two.columns                     { width: 120px; }
+    .container .no-margins.three.columns                   { width: 180px; }
+    .container .no-margins.four.columns                    { width: 240px; }
+    .container .no-margins.five.columns                    { width: 300px; }
+    .container .no-margins.six.columns                     { width: 360px; }
+    .container .no-margins.seven.columns                   { width: 420px; }
+    .container .no-margins.eight.columns                   { width: 480px; }
+    .container .no-margins.nine.columns                    { width: 540px; }
+    .container .no-margins.ten.columns                     { width: 600px; }
+    .container .no-margins.eleven.columns                  { width: 660px; }
+    .container .no-margins.twelve.columns                  { width: 720px; }
+    .container .no-margins.thirteen.columns                { width: 780px; }
+    .container .no-margins.fourteen.columns                { width: 840px; }
+    .container .no-margins.fifteen.columns                 { width: 900px; }
+    .container .no-margins.sixteen.columns                 { width: 960px; }
+
+    .container .no-margins.one-third.column                { width: 320px; }
+    .container .no-margins.two-thirds.column               { width: 640px; }
+
     /* Offsets */
     .container .offset-by-one                   { padding-left: 60px;  }
     .container .offset-by-two                   { padding-left: 120px; }
@@ -105,6 +130,28 @@
         .container .one-third.column                { width: 236px; }
         .container .two-thirds.column               { width: 492px; }
 
+        /* Base Grid No Margins */
+        .container .no-margins.one.column,
+        .container .no-margins.one.columns                     { width: 48px; }
+        .container .no-margins.two.columns                     { width: 96px; }
+        .container .no-margins.three.columns                   { width: 144px; }
+        .container .no-margins.four.columns                    { width: 192px; }
+        .container .no-margins.five.columns                    { width: 240px; }
+        .container .no-margins.six.columns                     { width: 288px; }
+        .container .no-margins.seven.columns                   { width: 336px; }
+        .container .no-margins.eight.columns                   { width: 384px; }
+        .container .no-margins.nine.columns                    { width: 432px; }
+        .container .no-margins.ten.columns                     { width: 480px; }
+        .container .no-margins.eleven.columns                  { width: 528px; }
+        .container .no-margins.twelve.columns                  { width: 576px; }
+        .container .no-margins.thirteen.columns                { width: 624px; }
+        .container .no-margins.fourteen.columns                { width: 672px; }
+        .container .no-margins.fifteen.columns                 { width: 720px; }
+        .container .no-margins.sixteen.columns                 { width: 768px; }
+
+        .container .no-margins.one-third.column                { width: 256px; }
+        .container .no-margins.two-thirds.column               { width: 512px; }
+
         /* Offsets */
         .container .offset-by-one                   { padding-left: 48px; }
         .container .offset-by-two                   { padding-left: 96px; }
@@ -153,6 +200,26 @@
         .container .sixteen.columns,
         .container .one-third.column,
         .container .two-thirds.column  { width: 300px; }
+
+        .container .no-margins.one.column,
+        .container .no-margins.one.columns,
+        .container .no-margins.two.columns,
+        .container .no-margins.three.columns,
+        .container .no-margins.four.columns,
+        .container .no-margins.five.columns,
+        .container .no-margins.six.columns,
+        .container .no-margins.seven.columns,
+        .container .no-margins.eight.columns,
+        .container .no-margins.nine.columns,
+        .container .no-margins.ten.columns,
+        .container .no-margins.eleven.columns,
+        .container .no-margins.twelve.columns,
+        .container .no-margins.thirteen.columns,
+        .container .no-margins.fourteen.columns,
+        .container .no-margins.fifteen.columns,
+        .container .no-margins.sixteen.columns,
+        .container .no-margins.one-third.column,
+        .container .no-margins.two-thirds.column  { width: 300px; }
 
         /* Offsets */
         .container .offset-by-one,
@@ -203,6 +270,26 @@
         .container .sixteen.columns,
         .container .one-third.column,
         .container .two-thirds.column { width: 420px; }
+
+        .container .no-margins.one.column,
+        .container .no-margins.one.columns,
+        .container .no-margins.two.columns,
+        .container .no-margins.three.columns,
+        .container .no-margins.four.columns,
+        .container .no-margins.five.columns,
+        .container .no-margins.six.columns,
+        .container .no-margins.seven.columns,
+        .container .no-margins.eight.columns,
+        .container .no-margins.nine.columns,
+        .container .no-margins.ten.columns,
+        .container .no-margins.eleven.columns,
+        .container .no-margins.twelve.columns,
+        .container .no-margins.thirteen.columns,
+        .container .no-margins.fourteen.columns,
+        .container .no-margins.fifteen.columns,
+        .container .no-margins.sixteen.columns,
+        .container .no-margins.one-third.column,
+        .container .no-margins.two-thirds.column { width: 420px; }
     }
 
 
