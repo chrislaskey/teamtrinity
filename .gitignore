@@ -1,8 +1,11 @@
+# Template index.php
 
 # Ignore WordPress Files
+
 *.htaccess
 celest
 index.php
+!trinity/index.php
 license.txt
 readme.html
 wp-activate.php
