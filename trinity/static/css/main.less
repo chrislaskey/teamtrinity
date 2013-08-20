@@ -4,51 +4,20 @@
 @text-anchor:#298cbf;
 @text-highlight:#74dbfe;
 
-@font-sans-light: "Brandon Grotesque Light", Helvetica Neue, Helvetica, Arial, sans-serif;
-@font-sans-roman: "Brandon Grotesque Regular", Helvetica Neue, Helvetica, Arial, sans-serif;
-@font-sans-medium: "Brandon Grotesque Medium", Helvetica Neue, Helvetica, Arial, sans-serif;
-@font-sans-alt-roman: "Avenir Roman", Helvetica Neue, Helvetica, Arial, sans-serif;
-@font-serif-roman: "Adelle Regular", Georgia, Times, serif;
+@font-sans-alt-roman: Helvetica, sans-serif;
+@font-serif-book: "Klinic Slab Book", Georgia, Times, serif;
 @font-serif-roman-italic: "Adelle Italic", Georgia, Times, serif;
 @font-monospace: monospace;
 
 // Font faces
 
 @font-face {
-	font-family: 'Brandon Grotesque Light';
-	src: url('../fonts/Brandon_light.woff') format('woff'),
-	     url('../fonts/Brandon_light.ttf')  format('truetype');
+	font-family: 'Klinic Slab Book';
+	src: url('../fonts/klinicslabbook-webfont.woff') format('woff'),
+	     url('../fonts/klinicslabbook-webfont.ttf')  format('truetype');
 }
 
-@font-face {
-	font-family: 'Brandon Grotesque Regular';
-	src: url('../fonts/Brandon_reg.woff') format('woff'),
-	     url('../fonts/Brandon_reg.ttf')  format('truetype');
-}
 
-@font-face {
-	font-family: 'Brandon Grotesque Medium';
-	src: url('../fonts/Brandon_med.woff') format('woff'),
-	     url('../fonts/Brandon_med.ttf')  format('truetype');
-}
-
-@font-face {
-	font-family: 'Avenir Roman';
-	src: url('../fonts/AvenirLTStd-Roman.woff') format('woff'),
-	     url('../fonts/AvenirLTStd-Roman.ttf')  format('truetype');
-}
-
-@font-face {
-	font-family: 'Adelle Regular';
-	src: url('../fonts/adelle_regular-webfont.woff') format('woff'),
-	     url('../fonts/adelle_regular-webfont.ttf')  format('truetype');
-}
-
-@font-face {
-	font-family: 'Adelle Italic';
-	src: url('../fonts/adelle_italic-webfont.woff') format('woff'),
-	     url('../fonts/adelle_italic-webfont.ttf')  format('truetype');
-}
 
 // Universals
 
@@ -90,7 +59,7 @@ a{
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-		height:546px;
+		height:446px;
 		position:relative;
 		width:100%;
 	}
@@ -115,7 +84,7 @@ a{
 	// sticky (static).
 	left:0px;
 	position:absolute;
-	top:551px;
+	top:451px;
 	z-index:1000;
 }
 
@@ -145,8 +114,7 @@ a{
 			#navigation ul li a{
 				color:#484848;
 				display:inline-block;
-				font:22px/70px @font-serif-roman;
-				font-style:italic;
+				font:22px/70px @font-serif-book;
 			}
 
 		#navigation ul li.current a{
@@ -174,19 +142,19 @@ a{
 }
 
 .content h1{
-	font:normal 36px/36px @font-serif-roman;
+	font:normal 36px/36px @font-serif-book;
 	font-style:italic;
 	margin:0px 0px 50px 0px;
 	text-align:center;
 }
 
 .content h2{
-	font:normal 20px/26px @font-serif-roman;
+	font:normal 20px/26px @font-serif-book;
 	margin:1em 0px 1em 0px;
 }
 
 .content h3{
-	font:normal 17px/26px @font-serif-roman;
+	font:normal 17px/26px @font-serif-book;
 	margin:1em 0px 1em 0px;
 }
 
@@ -227,7 +195,7 @@ ul.section-navigation{
 			background:#74dbfe;
 			color:#fff;
 			display:block;
-			font: 20px/22px @font-serif-roman;
+			font: 20px/22px @font-serif-book;
 			font-style:italic;
 			padding:55px 0px;
 			text-align:center;
