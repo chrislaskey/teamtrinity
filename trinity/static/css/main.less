@@ -6,6 +6,7 @@
 
 @font-sans-alt-roman: Helvetica, sans-serif;
 @font-serif-book: "Klinic Slab Book", Georgia, Times, serif;
+@font-serif-italic: "Klinic Slab Italic", Georgia, Times, serif;
 @font-serif-roman-italic: "Adelle Italic", Georgia, Times, serif;
 @font-monospace: monospace;
 
@@ -17,7 +18,11 @@
 	     url('../fonts/klinicslabbook-webfont.ttf')  format('truetype');
 }
 
-
+@font-face {
+	font-family: 'Klinic Slab Italic';
+	src: url('../fonts/klinicslabmediumit-webfont.woff') format('woff'),
+	     url('../fonts/klinicslabmediumit-webfont.ttf')  format('truetype');
+}
 
 // Universals
 
@@ -102,7 +107,7 @@ a{
 		padding:0px 0px 0px 35px;
 	}
 
-		#navigation ul li{
+		#navigation ul li{ 
 			display:inline-block;
 			padding-right:20px;
 		}
@@ -114,7 +119,7 @@ a{
 			#navigation ul li a{
 				color:#484848;
 				display:inline-block;
-				font:22px/70px @font-serif-book;
+				font:22px/70px @font-serif-italic;
 			}
 
 		#navigation ul li.current a{
@@ -123,7 +128,7 @@ a{
 
 #wrapper-main{
 	background:#f3f3f3;
-	margin-top:80px; // Height of navigation
+	margin-top:75px; // Height of navigation
 }
 
 	#main{
@@ -142,19 +147,18 @@ a{
 }
 
 .content h1{
-	font:normal 36px/36px @font-serif-book;
-	font-style:italic;
+	font:normal 36px/36px @font-serif-italic;
 	margin:0px 0px 50px 0px;
 	text-align:center;
 }
 
 .content h2{
-	font:normal 20px/26px @font-serif-book;
+	font:normal 20px/26px @font-serif-italic;
 	margin:1em 0px 1em 0px;
 }
 
 .content h3{
-	font:normal 17px/26px @font-serif-book;
+	font:normal 17px/26px @font-serif-italic;
 	margin:1em 0px 1em 0px;
 }
 
@@ -223,6 +227,10 @@ ul.section-content{
 
 // Media styles
 
+@media only screen and (min-width: 1200px) {
+	#header { background: url('../images/banners/banner-01-1400.jpg') no-repeat top right; }
+}
+
 @media only screen and (max-width: 767px) {
 
 	#header{
@@ -264,23 +272,37 @@ ul.section-content{
 
 	#header{
 		background:#282828;
+		height:220px;
 	}
+	
+	#wrapper-navigation {
+	top:165px;
+	
+	}
+	
+	#wrapper-main {margin-top:0px; }
 
 	#logo{ // Center logo
+		background-image:url('../images/structure/team-trinity-logo-mobile.jpg');
+		background-position: center top;
+		background-size: 100%;
 		position:relative;
 		left:auto;
 		top:auto;
 		margin:0px auto;
-		width:250px;
+		width:100%;
 	}
 
 	#navigation{
 		margin:0px auto;
 		width:90%;
 	}
+	
+	#navigation ul li { padding-right:10px; }
 
 	#navigation ul li a{
 		font-size:15px;
+		padding-right: 0px;
 	}
 
 }
