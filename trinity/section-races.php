@@ -25,26 +25,26 @@ $races_content = get_content_list_from_children($children, 'races');
 
 <script>
 $(function(){
-	var navigation_elements = $('.section-navigation.races').find('a');
-		navigation_content = $('.section-content.races').find('li');
+	var navigation_elements_races = $('.section-navigation.races').find('a');
+		navigation_content_races = $('.section-content.races').find('li');
 
-	navigation_elements.on('click', function(e){
+	navigation_elements_races.on('click', function(e){
 		e.preventDefault();
 		var target = $(e.target),
-			index = navigation_elements.index(target),
+			index = navigation_elements_races.index(target),
 			item,
 			i;
 
-		navigation_elements.removeClass('selected');
+		navigation_elements_races.removeClass('selected');
 		target.addClass('selected');
 
-		for(i = 0; i < navigation_content.length; i++){
-			item = navigation_content.eq(i);
+		for(i = 0; i < navigation_content_races.length; i++){
+			item = navigation_content_races.eq(i);
 			if( i == index ){ item.addClass('selected'); }
 			else{ item.removeClass('selected'); }
 		}
 	});
 
-	navigation_elements.eq(0).trigger('click');
+	navigation_elements_races.eq(0).trigger('click');
 });
 </script>
