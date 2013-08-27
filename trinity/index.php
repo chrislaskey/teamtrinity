@@ -4,12 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Team Trinity</title>
+	<link rel="shortcut icon" href="/wp-content/themes/trinity/static/images/structure/favicon.gif" />
 	<link rel="stylesheet" href="<?php echo WP_TEMPLATEPATH; ?>/static/css/skeleton.css">
-
 	<?php if(defined('TRINITY_DEBUG') && TRINITY_DEBUG === TRUE): ?>
 	<link rel="stylesheet/less" href="<?php echo WP_TEMPLATEPATH; ?>/static/css/main.less"><?php else: ?>
 	<link rel="stylesheet" href="<?php echo WP_TEMPLATEPATH; ?>/static/css/main.css"><?php endif; ?>
 
+
+/wp-content/themes/trinity/static/images/structure/favicon.gif
 	<script src="<?php echo WP_TEMPLATEPATH; ?>/static/js/libs/underscore-min.js"></script>
 	<script src="<?php echo WP_TEMPLATEPATH; ?>/static/js/libs/jquery-2.0.0.min.js"></script>
 	<script src="<?php echo WP_TEMPLATEPATH; ?>/static/js/libs/jquery-scrollto.min.js"></script>
