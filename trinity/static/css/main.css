@@ -160,6 +160,7 @@ ul.section-content {
   list-style: none;
   margin: 0px;
   padding: 0px;
+	height:470px;
 }
 ul.section-content li {
   display: none;

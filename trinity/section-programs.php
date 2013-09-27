@@ -20,6 +20,9 @@ $programs_content = get_content_list_from_children($children, 'programs');
 	<div class="twelve columns offset-by-two content">
 		<?php echo $programs_content; ?>
 	</div>
+	<div class="banner-image">
+		<img src="/wp-content/themes/trinity/static/images/content/banner-03.jpg" title="Sole Train" />
+	</div>
 	<div class="clearfix"></div>
 </section>
 
